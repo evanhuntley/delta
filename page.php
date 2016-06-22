@@ -1,19 +1,28 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-    <article role="main" class="primary-content type-page" id="post-<?php the_ID(); ?>">
-        <?php if ( is_front_page() ) { ?>
+    <article role="main" class="type-page" id="post-<?php the_ID(); ?>">
+        <header class="section-header">
             <h1><?php the_title(); ?></h1>
-        <?php } else { ?>
-            <h1><?php the_title(); ?></h1>
-        <?php } ?>
+        </header>
 
-        <?php the_content(); ?>
+        <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+            <div class="container">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
+        </div>
 
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:' ), 'after' => '</div>' ) ); ?>
+        <div class="primary container">
+            <section class="content">
+                <?php the_content(); ?>
+            </section>
+            <?php get_sidebar(); ?>
+        </div>
 
-        <?php endwhile; ?>
     </article>
+<?php endwhile; ?>
 
-<?php get_footer( 'no-sidebar' ); // will include footer-no-sidebar.php; ?>
+<?php get_footer(); // will include footer-no-sidebar.php; ?>

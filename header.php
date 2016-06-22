@@ -31,8 +31,7 @@
 <!-- The little things -->
 
 <!-- Stylesheets -->
-	<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,600" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo bloginfo('template_directory'); ?>/assets/css/style.css" />
 <!-- Stylesheets -->
 

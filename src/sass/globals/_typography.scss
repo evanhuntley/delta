@@ -17,11 +17,15 @@ html {
 
 body {
     @include font-size(1,1.5);
-	}
+    font-family: 'Raleway', Arial, sans-serif;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	@include font-size(1.5, 1.75);
-	}
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-transform: uppercase;
+    color: $purple;
+}
 
     h2 {}
     h3 {}
@@ -35,6 +39,8 @@ p {
 
 a {
 	@include hover-fade;
+    color: $blue;
+    text-decoration: none;
 
 	&:hover,
     &:active {
@@ -47,8 +53,8 @@ a:focus {
     }
 
 strong, b {
-	font-weight: $bold;
-	}
+	font-weight: 600;
+}
 
 .small {
 	@include font-size(.75, 1.25);

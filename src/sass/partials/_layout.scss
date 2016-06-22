@@ -2,7 +2,7 @@
     Site Layout
 =================================================================== */
 
-.primary-content, .container {
+.main-layout, .container {
     width: 95%;
     margin: 0 auto;
 
@@ -11,6 +11,24 @@
     }
 }
 
-.primary-content {
+.primary {
+    @extend %clearfix;
     padding: 1em 0;
+
+    .content {
+
+        @include bp-l {
+            float: right;
+            width: 75%;
+            padding: 0 2em;
+        }
+    }
+
+    .secondary-content {
+
+        @include bp-l {
+            float: left;
+            width: 25%;
+        }
+    }
 }

@@ -1,3 +1,60 @@
 // This is where you can put any styles specific to a page
 // .page is the class WordPress outputs to the body tag
-.page {}
+.page {
+
+    .section-header {
+        text-align: center;
+        @include linear-gradient(to right, #01acd0, #54e0ce);
+
+        h1 {
+            color: #fff;
+        }
+    }
+
+    .content {
+        color: $text;
+    }
+}
+
+/* Breadcrumbs ------------------------------------------------------ */
+
+.breadcrumbs {
+    padding: 1em 0;
+    border-bottom: 1px solid #dbdbdb;
+    background: $light-grey;
+    @include font-size(.75, 1.2);
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #717171;
+
+    span {
+
+    }
+
+    a {
+
+    }
+}
+
+/* Sidebar ---------------------------------------------------------- */
+
+aside {
+
+    .widget {
+
+        h3 {
+            @include font-size(1, 1.5);
+            font-weight: 400;
+        }
+
+        ul {
+            margin: 0 0 1em;
+            list-style-type: none;
+        }
+
+        li {
+            padding: .5em;
+            border-bottom: 1px solid #eeeeee;
+        }
+    }
+}

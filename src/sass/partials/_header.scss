@@ -4,7 +4,7 @@
 
 header {
     @extend %clearfix;
-    background: #ececec;
+    background: #fff;
 
     nav {
 
@@ -23,6 +23,14 @@ header {
                 a {
                     display: block;
                     padding: 1em;
+                    text-transform: uppercase;
+                    font-family: 'Montserrat', Arial, sans-serif;
+                    color: $dark-text;
+                    @include font-size(.875, 1.4);
+                }
+
+                &.current_page_item a {
+                    color: $blue;
                 }
             }
         }
@@ -30,7 +38,7 @@ header {
 
     .logo {
         margin: 1em 0 0;
-        
+
         @include bp-xl {
             width: 30%;
             float: left;
