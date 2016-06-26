@@ -45,7 +45,14 @@
 <body <?php body_class(); ?> id="top">
 	<div class="access-nav">
 		<div class="container">
-			Test
+			<?php
+				$args = array(
+					'menu' => 'Access Nav',
+					'container' => 'false',
+					'items_wrap' => '<ul>%3$s</ul>',
+					);
+				wp_nav_menu($args);
+			?>
 		</div>
 	</div>
     <header role="banner">
@@ -54,6 +61,7 @@
 	        <nav role="navigation">
 	            <?php
 	                $args = array(
+						'menu' => 'Main Nav',
 	                    'container' => 'false',
 	                    'items_wrap' => '<ul>%3$s</ul>',
 	                    );
