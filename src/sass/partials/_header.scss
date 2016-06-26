@@ -11,28 +11,35 @@ header {
         @include bp-xl {
             width: 70%;
             float: right;
+            margin: 1em 0;
+            text-align: right;
+        }
 
-            ul {
-                margin: 0;
-                padding: 0;
-            }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
 
-            li {
+        li {
+            display: block;
+
+            @include bp-xl {
                 display: inline-block;
-
-                a {
-                    display: block;
-                    padding: 1em;
-                    text-transform: uppercase;
-                    font-family: 'Montserrat', Arial, sans-serif;
-                    color: $dark-text;
-                    @include font-size(.875, 1.4);
-                }
-
-                &.current_page_item a {
-                    color: $blue;
-                }
+                margin: 0 .5em;
             }
+
+            &.current_page_item a {
+                color: $blue;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 1em;
+            text-transform: uppercase;
+            font-family: 'Montserrat', Arial, sans-serif;
+            color: $dark-text;
+            @include font-size(.875, 1.4);
         }
     }
 
