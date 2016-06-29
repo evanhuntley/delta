@@ -3,8 +3,67 @@
 =================================================================== */
 
 footer {
+    @extend %clearfix;
     margin: 1em 0 0;
-    padding: 1em 0;
+    padding: 3em 0;
     color: #fff;
     background: $dark-text;
+
+    .logo {
+        display: block;
+        width: 260px;
+        height: 48px;
+        margin: 0 0 2em;
+        background: url("../img/l_delta-white.png");
+        background: url("../img/l_delta-white.svg");
+        background-repeat: no-repeat;
+        border: 0;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+
+        @include bp-xl {
+            width: 320px;
+            height: 59px;
+            float: left;
+        }
+    }
+
+    .footer-details {
+        @include row;
+        clear: both;
+        padding: 24px 0 0;
+    }
+
+    .org-info {
+        @include col(1, 3);
+
+        p {
+            @include font-size(.8125, 1.5);
+        }
+
+        .social {
+            margin: 0;
+            list-style-type: none;
+
+            li {
+                display: inline-block;
+                margin-right: .5em;
+            }
+        }
+    }
+
+    .footer-nav {
+        @include col(1, 3);
+
+        ul {
+            @include row;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        li {
+            @include col(1, 2);
+        }
+    }
 }
