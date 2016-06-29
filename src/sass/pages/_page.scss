@@ -18,6 +18,39 @@
 
     .content {
         color: $text;
+
+        h2 {
+            margin: 1em 0;
+            color: #444;
+            text-transform: none;
+            @include font-size(1.5, 1);
+            font-weight: 400;
+
+            @include bp-l {
+                @include font-size(2.5, 2);
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5em;
+            margin: 0 0 1em;
+
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "\f054";
+                font-family: 'FontAwesome';
+                font-size: 12px;
+                color: $blue;
+            }
+        }
     }
 }
 
@@ -32,12 +65,11 @@
     font-weight: 600;
     color: #717171;
 
-    span {
-
-    }
-
-    a {
-
+    .separator {
+        position: relative;
+        top: -1px;
+        font-size: 10px;
+        margin: 0 1em;
     }
 }
 
@@ -45,7 +77,41 @@
 
 aside {
 
+    .subnav {
+        margin: 0 0 2em;
+
+        ul {
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            padding: 1em 0 1em 1.5em;
+            margin: 0;
+            border-bottom: 1px solid #eeeeee;
+
+            &:before {
+                position: absolute;
+                top: 17px;
+                left: 0;
+                content: "\f054";
+                font-family: 'FontAwesome';
+                font-size: 12px;
+                color: #444;
+            }
+        }
+
+        a {
+            color: #444;
+            @include font-size(.8125, 1);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
     .widget {
+        margin: 2em 0;
+        color: $text;
 
         h3 {
             @include font-size(1, 1.5);
