@@ -19,8 +19,10 @@
 	                wp_nav_menu($args);
 	            ?>
 			</div>
-			<div class="org-info">
-				Test
+			<div class="org-info location">
+				<p><i class="fa fa-map-marker"></i>734 N. Highland Ave NE, Suite 7<br />Atlanta, GA 30306</p>
+				<p><i class="fa fa-phone"></i>(470) 363-3839</p>
+				<p><i class="fa fa-paper-plane"></i><a href="mailto:info@deltaleadership.com">info@deltaleadership.com</a></p>
 			</div>
 		</div>
 	</div>

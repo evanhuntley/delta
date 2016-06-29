@@ -29,10 +29,12 @@ header {
 
         li {
             display: block;
+            border-bottom: 1px solid #ececec;
 
             @include bp-xl {
                 display: inline-block;
                 margin: 0 .5em;
+                border: none;
             }
 
             &.active a {
