@@ -50,3 +50,7 @@ button, .button, .page .woocommerce a.button {
 p {
     margin: 0 0 1em;
 }
+
+a:focus {
+    outline: none;
+}

@@ -4,12 +4,19 @@
 
 header {
     @extend %clearfix;
+    position: relative;
     background: #fff;
 
     nav {
+        display: none;
+
+        &.open {
+            display: block;
+        }
 
         @include bp-xl {
-            width: 70%;
+            display: block;
+            width: 65%;
             float: right;
             margin: 1em 0;
             text-align: right;
@@ -28,7 +35,7 @@ header {
                 margin: 0 .5em;
             }
 
-            &.current_page_item a {
+            &.active a {
                 color: $blue;
             }
         }
@@ -40,13 +47,17 @@ header {
             font-family: 'Montserrat', Arial, sans-serif;
             color: $dark-text;
             @include font-size(.875, 1.4);
+
+            &:hover {
+                color: $blue;
+            }
         }
     }
 
     .logo {
         display: block;
-        width: 320px;
-        height: 59px;
+        width: 260px;
+        height: 48px;
         margin: 1em 0;
         background: url("../img/l_delta.png");
         background: url("../img/l_delta.svg");
@@ -58,8 +69,74 @@ header {
         margin: 12px 0;
 
         @include bp-xl {
-            width: 30%;
+            width: 320px;
+            height: 59px;
             float: left;
+        }
+    }
+}
+
+.nav-toggle {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 2.5%;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    z-index: 999;
+    transition: all 250ms ease-in-out;
+
+    @include bp-xl {
+        display: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    span {
+        left: 6px;
+    }
+
+    span, span:before, span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 3px;
+      width: 30px;
+      background: $dark-text;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 250ms ease-in-out;
+    }
+
+    span:before {
+      top: -10px;
+    }
+
+    span:after {
+      bottom: -10px;
+    }
+
+    &.active {
+
+        span {
+            background-color: transparent;
+        }
+
+        span:before, span:after {
+            top: 0;
+            background-color: $purple;
+        }
+
+        span:before {
+            transform: rotate(45deg);
+        }
+
+        span:after {
+            transform: rotate(-45deg);
         }
     }
 }
@@ -93,6 +170,10 @@ header {
         float: right;
         margin: 0;
         list-style-type: none;
+
+        a {
+            padding: 0 1em;
+        }
     }
 
     li {
@@ -106,4 +187,54 @@ header {
             color: $blue;
         }
     }
+
+    .cart-contents {
+        position: relative;
+        float: right;
+        margin-left: 1em;
+        @include font-size(1.2, 1.5);
+
+        span {
+            position: absolute;
+            top: -4px;
+            right: -9px;
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #02b3c6;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 11px;
+            line-height: 15px;
+            text-align: center;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .social {
+        margin: 0 1em;
+
+        a {
+            @include font-size(1);
+            padding: 0 .5em;
+        }
+    }
+
+    .user-links {
+
+        li {
+
+            &:first-child a {
+                border-right: 1px solid #fff;
+            }
+        }
+
+        a {
+            padding: 0 1em;
+        }
+    }
+
 }

@@ -96,6 +96,12 @@ gulp.task('public', function() {
         .pipe(gulp.dest('assets/js/vendor'));
 });
 
+// Fonts
+gulp.task('fonts', function() {
+    gulp.src('src/components/font-awesome/fonts/**/*')
+        .pipe(gulp.dest('assets/fonts'));
+});
+
 // JS Hint
 gulp.task('jshint', function() {
     gulp.src('src/scripts/**/*.js')
@@ -110,10 +116,10 @@ gulp.task( "envProduction", function() {
 });
 
 // Local/Dev
-gulp.task('default', ['styles', 'scripts', 'public', 'jshint']);
+gulp.task('default', ['styles', 'scripts', 'public', 'fonts', 'jshint']);
 
 // Production
-gulp.task('prod', ['envProduction', 'styles', 'scripts', 'public']);
+gulp.task('prod', ['envProduction', 'styles', 'scripts', 'fonts', 'public']);
 
 // Watch
 gulp.task('watch', ['browsersync'], function () {

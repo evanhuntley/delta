@@ -45,10 +45,20 @@
 <body <?php body_class(); ?> id="top">
 	<div class="access-nav">
 		<div class="container">
+			<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-cart"></i><span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a>
+			<ul class="user-links">
+				<li><a href="/register">Register</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+			<ul class="social">
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="/feed"><i class="fa fa-rss"></i></a></li>
+			</ul>
 			<?php
 				$args = array(
 					'menu' => 'Access Nav',
-					'container' => 'false',
+					'container' => false,
 					'items_wrap' => '<ul>%3$s</ul>',
 					);
 				wp_nav_menu($args);
@@ -58,11 +68,12 @@
     <header role="banner">
 		<div class="container">
 	        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php bloginfo( 'name' ); ?></a>
+			<a class="nav-toggle" href="#"><span></span></a>
 	        <nav role="navigation">
 	            <?php
 	                $args = array(
 						'menu' => 'Main Nav',
-	                    'container' => 'false',
+	                    'container' => false,
 	                    'items_wrap' => '<ul>%3$s</ul>',
 	                    );
 	                wp_nav_menu($args);
