@@ -181,4 +181,14 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_filter( 'gform_init_scripts_footer', '__return_true' );
 
 
+/*
+ * Return a new number of maximum columns for shop archives
+ * @param int Original value
+ * @return int New number of columns
+ */
+function wc_loop_shop_columns( $number_columns ) {
+	return 3;
+}
+add_filter( 'loop_shop_columns', 'wc_loop_shop_columns', 1, 10 );
+
 ?>

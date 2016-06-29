@@ -54,3 +54,9 @@ p {
 a:focus {
     outline: none;
 }
+
+/* Woocommerce overrides ---------------------------------- */
+
+.woocommerce-breadcrumb {
+    display: none;
+}
