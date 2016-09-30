@@ -18,11 +18,13 @@ Version: 1.0
     "globals/misc",
     "globals/forms",
 
-    "pages/single",
-    "pages/page",
-	"pages/product-list",
-
 	"partials/base",
     "partials/layout",
 	"partials/header",
-	"partials/footer";
+	"partials/footer",
+	"partials/woo-general",
+
+    "pages/single",
+    "pages/page",
+	"pages/product-list",
+	"pages/single-product";

@@ -4,11 +4,21 @@ add_theme_support( 'menus' );
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+		'name'          => __( 'Sidebar 1'),
+		'id'			=> 'sidebar-1',
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
-));
+	));
+	register_sidebar(array(
+		'name'          => __( 'Shop'),
+		'id'			=> 'shop',
+		'before_widget' => '<div class="widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	));
 
 add_post_type_support('page', 'excerpt');
 
@@ -98,11 +108,19 @@ add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
 function my_theme_wrapper_start() {
-  echo '<div class="primary container">';
+  echo '<article class="shop">' .
+  '<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">' .
+	  '<div class="container">';
+	  if(function_exists('bcn_display'))
+		  {
+			  bcn_display();
+		  }
+	  echo '</div>' .
+  '</div><div class="primary container">';
 }
 
 function my_theme_wrapper_end() {
-  echo '</div>';
+  echo '</div></article>';
 }
 
 // Menu Meta Box

@@ -1,0 +1,66 @@
+/* ================================================================
+    Woocommerce General Styles
+=================================================================== */
+
+.woocommerce.woocommerce-page {
+
+    /* Layout -------------------------- */
+    .content {
+
+        @include bp-l {
+            float: left;
+            padding: 0 3em 0 0;
+        }
+    }
+
+    .secondary-content {
+
+        @include bp-l {
+            float: right;
+        }
+    }
+
+    /* Woo Styles ----------------------- */
+    .woocommerce-message {
+        border-top-color: #1bae78;
+
+        &:before {
+            color: #1bae78;
+        }
+    }
+
+    .primary {
+        margin-top: 2em;
+    }
+
+    .product_title {
+        font-weight: 400;
+        color: #444;
+    }
+
+    .cart {
+
+        input {
+            margin: 1em 0;
+            padding: .8em;
+        }
+
+        button.button.alt {
+            @extend .button;
+        }
+    }
+
+    div.product p.price, div.product span.price {
+        color: $blue;
+    }
+
+    .sku_wrapper {
+        display: block;
+    }
+}
+
+/* Woocommerce overrides ---------------------------------- */
+
+.woocommerce-breadcrumb {
+    display: none;
+}

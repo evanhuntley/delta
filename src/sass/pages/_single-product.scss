@@ -1,0 +1,31 @@
+/* ================================================================
+    Single Product
+=================================================================== */
+
+.single-product {
+
+    .primary {
+        margin-top: 2em;
+    }
+
+    .product_title {
+        font-weight: 400;
+        color: #444;
+    }
+
+    .cart {
+
+        input {
+            margin: 1em 0;
+            padding: .8em;
+        }
+
+        button.button.alt {
+            @extend .button;
+        }
+    }
+
+    .sku_wrapper {
+        display: block;
+    }
+}

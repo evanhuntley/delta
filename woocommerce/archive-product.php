@@ -24,21 +24,8 @@ get_header( 'shop' ); ?>
 	<article role="main" class="type-page" id="post-<?php the_ID(); ?>">
 
 		<header class="section-header">
-			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-				<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-			<?php endif; ?>
+			<h1 class="page-title">Shop</h1>
 		</header>
-
-		<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
-			<div class="container">
-				<?php if(function_exists('bcn_display'))
-				{
-					bcn_display();
-				}?>
-			</div>
-		</div>
 
 	<?php
 		/**
@@ -62,6 +49,13 @@ get_header( 'shop' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
+			<div class="content">
+			<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+				<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+
+			<?php endif; ?>
+			
 			<?php
 				/**
 				 * woocommerce_before_shop_loop hook.
@@ -83,6 +77,10 @@ get_header( 'shop' ); ?>
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
+
+			</div>
+
+			<?php get_sidebar('shop'); ?>
 
 			<?php
 				/**

@@ -55,8 +55,34 @@ a:focus {
     outline: none;
 }
 
-/* Woocommerce overrides ---------------------------------- */
+.screen-reader-text {
+    display: block;
+    visibility: hidden;
+    height: 0;
+}
 
-.woocommerce-breadcrumb {
-    display: none;
+form[role="search"] {
+    position: relative;
+
+    input[type="search"] {
+        width: 100%;
+        padding: .5em;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        position: absolute;
+        top: 7px;
+        right: 12px;
+        border: none;
+        opacity: 0;
+    }
+
+    &:before {
+        content: "\f002";
+        font-family: 'FontAwesome', sans-serif;
+        position: absolute;
+        top: 7px;
+        right: 12px;
+    }
 }

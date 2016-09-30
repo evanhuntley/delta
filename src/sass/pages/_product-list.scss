@@ -1,3 +1,18 @@
 /* ================================================================
     Product List
 =================================================================== */
+
+.woocommerce.woocommerce-page {
+
+    &.post-type-archive-product {
+
+        .content {
+            
+            h1 {
+                margin-top: 0;
+                font-weight: 400;
+                color: #444;
+            }
+        }
+    }
+}
