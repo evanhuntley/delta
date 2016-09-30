@@ -21,6 +21,13 @@
     }
 
     /* Woo Styles ----------------------- */
+
+    .post-type-archive-product {
+
+        h1 {
+
+        }
+    }
     .woocommerce-message {
         border-top-color: #1bae78;
 
@@ -56,6 +63,10 @@
 
     .sku_wrapper {
         display: block;
+    }
+
+    ul.products li.product {
+        text-align: center;
     }
 }
 
