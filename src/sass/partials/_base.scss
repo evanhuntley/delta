@@ -34,11 +34,12 @@ img,
 a img {
     -ms-interpolation-mode: bicubic;
     max-width: 100%;
-    min-height: auto;
+    height: auto;
     vertical-align: middle;
     }
 
 button, .button, .page .woocommerce a.button {
+    display: inline-block;
     margin: 1em 0;
     padding: 1em 2em;
     @include linear-gradient(to right, #01acd0, #54e0ce);

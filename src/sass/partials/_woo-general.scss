@@ -2,7 +2,7 @@
     Woocommerce General Styles
 =================================================================== */
 
-.woocommerce.woocommerce-page {
+.woocommerce {
 
     /* Layout -------------------------- */
     .content {
@@ -20,14 +20,16 @@
         }
     }
 
-    /* Woo Styles ----------------------- */
+    ul.products {
+        @include row;
 
-    .post-type-archive-product {
-
-        h1 {
-
+        li {
+            @include col(1, 3);
         }
     }
+
+    /* Woo Styles ----------------------- */
+
     .woocommerce-message {
         border-top-color: #1bae78;
 
@@ -40,7 +42,7 @@
         margin-top: 2em;
     }
 
-    .product_title {
+    .product_title, .products h3 {
         font-weight: 400;
         color: #444;
     }
@@ -54,18 +56,21 @@
 
         button.button.alt {
             @extend .button;
+            border: none;
         }
     }
 
-    div.product p.price, div.product span.price {
+    .price {
+        display: block;
         color: $blue;
+        @include font-size(1.2);
     }
 
     .sku_wrapper {
         display: block;
     }
 
-    ul.products li.product {
+    li.product {
         text-align: center;
     }
 }
