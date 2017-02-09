@@ -15,4 +15,43 @@
             }
         }
     }
+
+    .products {
+        @extend %clearfix;
+        margin: 1em 0;
+        list-style-type: none;
+
+        h3 {
+            @include font-size(1.125, 1.5);
+        }
+
+        li {
+            margin: 0 0 2em;
+
+            @include bp-l {
+                @include rowMachine(2, 5%);
+            }
+
+            @include bp-xl {
+                @include rowMachine(3, 4%, 4em);
+            }
+
+            .button {
+                display: inline-block;
+                margin: 1em 0;
+                padding: 1em 2em;
+                text-transform: uppercase;
+                color: $blue;
+                background: transparent;
+                border: 3px solid #01acd0;
+                border-image: linear-gradient(to right, #01acd0 0%, #54e0ce 100%);
+                border-image-slice: 1;
+
+                &:hover {
+                    @include linear-gradient(to right, #01acd0, #54e0ce);
+                    color: #fff;
+                }
+            }
+        }
+    }
 }

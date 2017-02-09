@@ -68,7 +68,6 @@ footer {
         }
 
         li {
-            @include col(1, 2);
 
             &:before {
                 content: "\f054";

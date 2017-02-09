@@ -20,14 +20,6 @@
         }
     }
 
-    ul.products {
-        @include row;
-
-        li {
-            @include col(1, 3);
-        }
-    }
-
     /* Woo Styles ----------------------- */
 
     .woocommerce-message {
@@ -45,19 +37,6 @@
     .product_title, .products h3 {
         font-weight: 400;
         color: #444;
-    }
-
-    .cart {
-
-        input {
-            margin: 1em 0;
-            padding: .8em;
-        }
-
-        button.button.alt {
-            @extend .button;
-            border: none;
-        }
     }
 
     .price {

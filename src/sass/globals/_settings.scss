@@ -1,11 +1,11 @@
 /*
 
-    MIXINS AND VARIABLES
-    ====================
+MIXINS AND VARIABLES
+====================
 
-    All mixins and variables live here. Where possible, please include
-    a source link if they're written by someone else along with an
-    indication of how they should be used in the css files.
+All mixins and variables live here. Where possible, please include
+a source link if they're written by someone else along with an
+indication of how they should be used in the css files.
 
 */
 
@@ -26,29 +26,29 @@ $text: #666666;
 	line-height   : ($line * 16) + px;
 	font-size     : $size + rem;
 	line-height   : $line + rem;
-	}
+}
 
 /* Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
 // Use: @include bp-s {};
 @mixin bp-s {
-    @media only screen and (min-width: 30em) { @content; }
-    }
+	@media only screen and (min-width: 30em) { @content; }
+}
 
 @mixin bp-m {
-    @media only screen and (min-width: 37.5em) { @content; }
-    }
+	@media only screen and (min-width: 37.5em) { @content; }
+}
 
 @mixin bp-l {
-    @media only screen and (min-width: 48em) { @content; }
-    }
+	@media only screen and (min-width: 48em) { @content; }
+}
 
 @mixin bp-xl {
-    @media only screen and (min-width: 64em) { @content; }
-    }
+	@media only screen and (min-width: 64em) { @content; }
+}
 
 @mixin bp-xxl {
-    @media only screen and (min-width: 78.75em) { @content; }
-    }
+	@media only screen and (min-width: 78.75em) { @content; }
+}
 
 /* Hover animation */
 // Use: @include hover-fade;
@@ -56,69 +56,69 @@ $text: #666666;
 	-webkit-transition: all 0.3s ease 0s;
 	-moz-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
-	}
+}
 
 /* Gradient */
 // Use: @include gradient(#f36,#f60);
 @mixin gradient($from, $to) {
-    background:         -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-    background:         -moz-linear-gradient(top,  $from, $to);
-    background-image:   -ms-linear-gradient(top, $from, $to);
-    background-image:   -o-linear-gradient(top, $from, $to);
-    -ms-filter:         "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to')";
-    filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
-    }
+	background:         -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background:         -moz-linear-gradient(top,  $from, $to);
+	background-image:   -ms-linear-gradient(top, $from, $to);
+	background-image:   -o-linear-gradient(top, $from, $to);
+	-ms-filter:         "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to')";
+	filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
 
 /* Clearfix http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
 // Use: @extend %clearfix;
 %clearfix {
-    *zoom: 1;
-
-    &:before {
-        content: " ";
-        display: table;
-        }
-
-    &:after {
-        content: " ";
-        display: table;
-        clear: both;
-        }
-    }
+	*zoom: 1;
+	
+	&:before {
+		content: " ";
+		display: table;
+	}
+	
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
 
 /* Visually hide element http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
 // Use: @extend %visuallyhidden;
 %visuallyhidden {
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-    }
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
 
 /* Image floats */
 // Use: @extend %floatleft
 %floatleft {
-    display: block;
-    margin: 0 1em 1em 0;
-    @include bp-m {
-        float: left;
-        display: inline;
-        }
-    }
+	display: block;
+	margin: 0 1em 1em 0;
+	@include bp-m {
+		float: left;
+		display: inline;
+	}
+}
 
 // Use: @extend %floatright
 %floatright {
-    display: block;
-    margin: 0 0 1em 1em;
-    @include bp-m {
-        float: right;
-        display: inline;
-        }
-    }
+	display: block;
+	margin: 0 0 1em 1em;
+	@include bp-m {
+		float: right;
+		display: inline;
+	}
+}
 
 /// Convert angle
 /// @author Chris Eppstein
@@ -126,25 +126,25 @@ $text: #666666;
 /// @param {String} $unit - Unit to convert to
 /// @return {Number} Converted angle
 @function convert-angle($value, $unit) {
-  $convertable-units: deg grad turn rad;
-  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
-  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
-    @return $value
-             / nth($conversion-factors, index($convertable-units, unit($value)))
-             * nth($conversion-factors, index($convertable-units, $unit));
-  }
-
-  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+	$convertable-units: deg grad turn rad;
+	$conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+	@if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+		@return $value
+		/ nth($conversion-factors, index($convertable-units, unit($value)))
+		* nth($conversion-factors, index($convertable-units, $unit));
+	}
+	
+	@warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
 }
 
 /// Test if `$value` is an angle
 /// @param {*} $value - Value to test
 /// @return {Bool}
 @function is-direction($value) {
-  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
-  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
-
-  @return $is-direction or $is-angle;
+	$is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+	$is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+	
+	@return $is-direction or $is-angle;
 }
 
 /// Convert a direction to legacy syntax
@@ -152,30 +152,30 @@ $text: #666666;
 /// @require {function} is-direction
 /// @require {function} convert-angle
 @function legacy-direction($value) {
-  @if is-direction($value) == false {
-    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
-  }
-
-  $conversion-map: (
-    to top          : bottom,
-    to top right    : bottom left,
-    to right top    : left bottom,
-    to right        : left,
-    to bottom right : top left,
-    to right bottom : left top,
-    to bottom       : top,
-    to bottom left  : top right,
-    to left bottom  : right top,
-    to left         : right,
-    to left top     : right bottom,
-    to top left     : bottom right
-  );
-
-  @if map-has-key($conversion-map, $value) {
-    @return map-get($conversion-map, $value);
-  }
-
-  @return 90deg - convert-angle($value, 'deg');
+	@if is-direction($value) == false {
+		@warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+	}
+	
+	$conversion-map: (
+	to top          : bottom,
+	to top right    : bottom left,
+	to right top    : left bottom,
+	to right        : left,
+	to bottom right : top left,
+	to right bottom : left top,
+	to bottom       : top,
+	to bottom left  : top right,
+	to left bottom  : right top,
+	to left         : right,
+	to left top     : right bottom,
+	to top left     : bottom right
+	);
+	
+	@if map-has-key($conversion-map, $value) {
+		@return map-get($conversion-map, $value);
+	}
+	
+	@return 90deg - convert-angle($value, 'deg');
 }
 
 /// Mixin printing a linear-gradient
@@ -185,14 +185,14 @@ $text: #666666;
 /// @param {String | List | Angle} $direction - Linear gradient direction
 /// @param {Arglist} $color-stops - List of color-stops composing the gradient
 @mixin linear-gradient($direction, $color-stops...) {
-  @if is-direction($direction) == false {
-    $color-stops: ($direction, $color-stops);
-    $direction: 180deg;
-  }
-
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
+	@if is-direction($direction) == false {
+		$color-stops: ($direction, $color-stops);
+		$direction: 180deg;
+	}
+	
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+	background: linear-gradient($direction, $color-stops);
 }
 
 %gradient {
@@ -205,8 +205,8 @@ $text: #666666;
 // of columns. It kills default margin of inline-block
 // elements.
 @mixin row () {
-  font-size: 0;
-  @extend %clearfix;
+	font-size: 0;
+	@extend %clearfix;
 }
 
 // This is column mixin.
@@ -231,4 +231,25 @@ $text: #666666;
     }
 
     &.fluid { width: percentage($col/$sum); }
+}
+
+// Row Machine (via Chris Coyier)
+@mixin rowMachine($numPerRow, $margin, $bottom: $margin) {
+	width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+	float: left;
+	
+	&:nth-child(n) {
+		margin-bottom: $bottom;
+		margin-right: $margin;
+		clear: none;
+	}
+	
+	&:nth-child(#{$numPerRow}n) {
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+	
+	&:nth-child(#{$numPerRow}n + 1) {
+		clear: left;
+	}
 }

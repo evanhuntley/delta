@@ -26,6 +26,19 @@
         margin-top: 2em;
     }
 
+    .cart {
+
+        input {
+            margin: 1em 0;
+            padding: .8em;
+        }
+
+        button.button.alt {
+            @extend .button;
+            border: none;
+        }
+    }
+
     /* Tabs --------------------------------- */
 
     .woocommerce-tabs {

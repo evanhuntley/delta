@@ -1,0 +1,79 @@
+/* ================================================================
+    Home
+=================================================================== */
+
+.home {
+
+    .section-header {
+        background: url('../img/bg_home.jpg');
+        background-size: cover;
+
+        @include bp-l {
+            padding: 8em 0;
+        }
+
+        h1 {
+            margin: 0 0 .5em;
+
+            span {
+                display: block;
+                margin: 0 0 1em;
+                @include font-size(1.25, 1.8);
+            }
+        }
+
+        p {
+            font-style: italic;
+            color: #fff;
+        }
+    }
+
+    .block {
+        padding: 2em 0;
+
+        .container { @include row; }
+
+        h1, h2, h3 {
+            font-weight: 400;
+        }
+    }
+
+    .about {
+
+        .about-info {
+            @include col(1, 2);
+        }
+
+        .video {
+            @include col(1, 2);
+        }
+    }
+
+    .six-domains {
+        background: #f8f8f8;
+
+        .subsection-header {
+            @include col(1,1);
+            text-align: center;
+        }
+
+        .info-block {
+            @include col(1,2);
+
+            h3 {
+                color: $blue;
+            }
+        }
+    }
+
+    .our-team {
+
+        .team-bios {
+            @include col(2,3);
+        }
+
+        .testimonials {
+            @include col(1,3);
+        }
+    }
+}
