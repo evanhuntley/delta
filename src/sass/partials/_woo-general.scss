@@ -23,10 +23,17 @@
     /* Woo Styles ----------------------- */
 
     .woocommerce-message {
-        border-top-color: #1bae78;
+        margin: 0 0 .5em;
+        padding: 0 .5em;
+        background: rgba(#1bae78, .08);
+        border: 1px solid #52dfce;
 
         &:before {
             color: #1bae78;
+        }
+        
+        a {
+            margin-right: 1em;
         }
     }
 

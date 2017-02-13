@@ -37,21 +37,18 @@
             }
 
             .button {
-                display: inline-block;
-                margin: 1em 0;
-                padding: 1em 2em;
-                text-transform: uppercase;
-                color: $blue;
-                background: transparent;
-                border: 3px solid #01acd0;
-                border-image: linear-gradient(to right, #01acd0 0%, #54e0ce 100%);
-                border-image-slice: 1;
-
-                &:hover {
-                    @include linear-gradient(to right, #01acd0, #54e0ce);
-                    color: #fff;
-                }
+                @extend .button.alternate;
             }
+        }
+    }
+    
+    .woocommerce-pagination {
+        width: 100%;
+        float: left;
+        
+        li {
+            display: inline-block;
+            margin-right: .5em;
         }
     }
 }

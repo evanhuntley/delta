@@ -85,3 +85,7 @@ textarea {
     vertical-align: top;
     resize: vertical;
     }
+    
+input[type="text"], input[type="search"], input[type="number"] {
+    padding: .5em;
+}

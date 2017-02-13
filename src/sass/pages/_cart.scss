@@ -1,0 +1,132 @@
+/* ================================================================
+    Shopping Cart
+=================================================================== */
+
+.cart {
+    
+    .content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .cart-table {
+        width: 100%;
+        
+        th {
+            padding: .5em;
+            text-align: left;
+            text-transform: uppercase;  
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+        }
+        
+        td {
+            padding: 1em .5em;
+        }
+        
+        tbody {
+            .product-thumbnail {
+                float: left;
+                margin-right: 1em;
+            }
+            
+            .product-name {
+                @include font-size(1.2, 1);
+                line-height: 180px;
+                text-transform: uppercase;
+            }
+            
+            .quantity {
+                
+                input {
+                    padding: .5em;
+                    max-width: 50px;
+                }
+            }
+            
+            .product-remove {
+                @include font-size(1.875, 1.4);
+            }
+        }
+        
+        .coupon {
+            float: left;
+            
+            label {
+                display: none;
+            }
+            
+            input {
+                padding: 1em;
+            }
+            
+            .button {
+                @extend .button.alternate;    
+            }
+        }
+        
+        input[name="update_cart"] {
+            float: right;
+            @extend .button.alternate;
+        }
+    }
+    
+    .cart-collaterals {
+        margin: 1em 0;
+        padding: 1.5em;
+        background: #fafafa;
+        
+        table {
+            width: 100%;
+            
+            @include bp-l {
+                width: 50%;
+            }
+        }
+        
+        h2 {
+            margin: 0 0 1em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #eeeeee;
+            text-transform: uppercase;
+        }
+        
+        th, td {
+            padding: .5em;
+        }
+        
+        tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            width: 50%;
+            float: left;
+            text-align: left;
+            text-transform: uppercase;
+        }
+        
+        td {
+            width: 50%;
+            float: right;
+        }
+        
+        .woocommerce-shipping-calculator {
+            display: none;
+        }
+        
+        .order-total {
+            background: #54e0ce;
+            color: #fff;
+            @include font-size(1.25, 1);
+            
+            th, td {
+                padding: 1em;
+            }
+        }
+    }
+    
+    .wc-proceed-to-checkout {
+        margin-top: 2em;
+    }
+}
