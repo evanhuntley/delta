@@ -1,0 +1,147 @@
+/* ================================================================
+    Checkout
+=================================================================== */
+
+.checkout {
+    
+    .content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    h3 {
+        font-weight: 400;
+    }
+    
+    .woocommerce-checkout {
+        
+        @include bp-l {
+            font-size: 0;      
+        }
+        
+        label {
+            display: block;
+            text-transform: uppercase;
+        }
+        
+        .required {
+            border: none;
+            cursor: pointer;
+            color: $blue;
+            font-size: 13px;
+        }
+        
+        .select2-choice {
+            padding: .3em 1em;
+        }
+        
+        input {
+            width: 100%;
+            padding: .5em;
+        }
+        
+        .form-row-first {
+            float: left;
+            @include col(1, 2, $first: true);
+        }
+        
+        .form-row-last {
+            float: left;
+            @include col(1, 2, $last: true);
+        }
+        
+        .form-row.notes {
+            display: none;
+        }
+    }
+    
+    .customer-details {
+        
+        @include bp-l {
+            
+            @include col(1, 2);
+        }
+    }
+    
+    .order-review {
+        
+        @include bp-l {
+            
+            @include col(1, 2);
+        }
+        
+        .woocommerce-checkout-review-order {
+            background: #f8f8f8;
+        }
+        
+        table {
+            width: 100%;
+            text-align: left;
+            
+            tbody {
+                background: #ffffff;
+            }
+            
+            th {
+                padding: 1em;
+                text-transform: uppercase;
+            }
+            
+            td {
+                padding: 1em;
+            }
+        }
+        
+        .methods {
+            
+            li {
+                position: relative;
+                padding-left: 0;
+                
+                input + label {
+                    padding: 1em 1em 1em 3em;
+                }
+                
+                input[type="radio"] {
+                    position: absolute;
+                    top: 1.5em;
+                    left: 1em;
+                }
+                
+                input:checked + label {
+                    color: #fff;
+                    background: #201d22;
+                }
+                
+                &:before {
+                    content: none;
+                }
+            }
+            
+            .payment_box {
+                padding: 1.5em;
+                color: #fff;
+                background: #201d22;
+                
+                label {
+                    margin-top: 1em;
+                }
+                
+                input {
+                    background: #fff;
+                }
+                
+                #wc-paypal-braintree-card-number, #wc-paypal-braintree-expiration-date, #wc-paypal-braintree-cvv {
+                    background: #fff;
+                }
+            }
+        }
+    }
+    
+    #place_order {
+        margin: 2em 0 0;
+        padding: 1em 0;
+        border: none;
+        @include font-size(1.4, 1.8);
+    }
+}

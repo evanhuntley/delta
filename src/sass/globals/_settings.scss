@@ -218,16 +218,28 @@ $text: #666666;
     @media only screen and (min-width: 768px) {
             width: percentage($col/$sum);
             vertical-align: $align;
-			padding-left: $gap;
-		    padding-right: $gap;
-
-			&:first-child{
+			
+			@if $first {
+				padding-left: 0;
+			} @else {
+				padding-left: $gap;
+			}
+			
+			@if $last {
+				padding-right: 0;
+			} @else {
+				padding-right: $gap;
+			}
+			
+			&:first-child {
 		  	   padding-left: 0;
 			}
 
 			&:last-child{
 			   padding-right: 0;
 			}
+			
+
     }
 
     &.fluid { width: percentage($col/$sum); }
