@@ -7,5 +7,10 @@ jQuery(document).ready(function($) {
         $('header nav').slideToggle();
         $(this).toggleClass('active');
     });
+    
+    // flexslider
+    $('.flexslider').flexslider({
+        controlNav: false
+    });
 
 });

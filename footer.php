@@ -20,9 +20,9 @@
 	            ?>
 			</div>
 			<div class="org-info location">
-				<p><i class="fa fa-map-marker"></i>734 N. Highland Ave NE, Suite 7<br />Atlanta, GA 30306</p>
-				<p><i class="fa fa-phone"></i>(470) 363-3839</p>
-				<p><i class="fa fa-paper-plane"></i><a href="mailto:info@deltaleadership.com">info@deltaleadership.com</a></p>
+				<p><i class="fa fa-map-marker"></i>PO Box 219<br />Carrboro, NC 27510</p>
+				<p><i class="fa fa-phone"></i><a href="tel:919-636-5170">(919) 636-5170</a></p>
+				<p><i class="fa fa-paper-plane"></i><a href="mailto:delta.leadership.inc@gmail.com">delta.leadership.inc@gmail.com</a></p>
 			</div>
 		</div>
 	</div>

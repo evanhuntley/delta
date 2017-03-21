@@ -24,7 +24,7 @@ get_header( 'shop' ); ?>
 	<article role="main" class="type-page" id="post-<?php the_ID(); ?>">
 
 		<header class="section-header">
-			<h1 class="page-title">Shop</h1>
+			<h1 class="page-title">Store</h1>
 		</header>
 
 	<?php

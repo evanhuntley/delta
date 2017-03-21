@@ -48,7 +48,11 @@
 			<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="fa fa-shopping-cart"></i><span><?php echo sprintf (_n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span></a>
 			<ul class="user-links">
 				<li><a href="/register">Register</a></li>
-				<li><a href="/login">Login</a></li>
+				<?php if ( rcp_is_active()) : ?>
+					<li><a href="<?php echo wp_logout_url( home_url() ); ?> ">Logout</a></li>
+				<?php else : ?>
+					<li><a href="/login">Login</a></li>	
+				<?php endif; ?>
 			</ul>
 			<ul class="social">
 				<li><a href="#"><i class="fa fa-facebook"></i></a></li>

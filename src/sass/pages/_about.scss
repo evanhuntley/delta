@@ -1,0 +1,37 @@
+/* ================================================================
+    About
+=================================================================== */
+
+.about {
+    
+    .role-group {
+        margin: 3em 0;
+        
+        img {
+            
+            @include bp-l {
+                float: right;
+                margin-left: 1em;
+                margin-bottom: 1em;
+            }
+        }
+    }
+    
+    .coaches {
+        
+        .person {
+            
+            @include bp-l {
+                @include rowMachine(3, 5%);
+            }
+
+            @include bp-xl {
+                @include rowMachine(4, 4%, 4em);
+            }
+            
+            .name {
+                font-weight: 400;
+            }
+        }
+    }
+}

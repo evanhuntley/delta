@@ -17,6 +17,7 @@
 
         $six_domains_text = types_render_field("home-domains-text", array("raw" => true));
 
+        $certification_sb = types_render_field("certification-small-block", array("raw" => true));
         $education_sb = types_render_field("education-small-block", array("raw" => true));
         $survey_sb = types_render_field("survey-small-block", array("raw" => true));
         $coaching_sb = types_render_field("coaching-small-block", array("raw" => true));
@@ -57,6 +58,10 @@
                     <?= $six_domains_text ?>
                 </div>
                 <div class="info-block">
+                    <h3>Professional Leadership Coaching Certification Program</h3>
+                    <?= $certification_sb; ?>
+                </div>
+                <div class="info-block">
                     <h3>Education</h3>
                     <?= $education_sb; ?>
                 </div>
@@ -69,22 +74,43 @@
                     <?= $coaching_sb; ?>
                 </div>
                 <div class="info-block">
-                    <h3>Course Materials</h3>
+                    <h3>Leadership Materials</h3>
                     <?= $course_sb; ?>
                 </div>
             </div>
         </div>
 
-        <div class="our-team block">
+        <?php
+            $args = array(
+                'post_type' => 'testimonials',
+                'posts_per_page' => -1,
+                'order' => 'RAND'
+            );
+            $slides = new WP_Query( $args);
+        ?>
+        <?php if ($slides->have_posts()) : ?>
+        <div class="testimonials block">
             <div class="container">
-                <div class="team-bios">
-                    <h2>The Team Behind the Program</h2>
+                <h2>What Others Are Saying</h2>
+                
+                <div class="flexslider">
+                    <ul class="slides">
+                        <?php
+                            while ( $slides->have_posts() ) : $slides->the_post();
+                        ?>
+                        <li class="testimonial">
+                            <div class="slide-content">
+                                <?php the_content(); ?>
+                                <h3 class="name"><?php the_title(); ?></h3>
+                            </div>
+                        </li>
+                        <?php endwhile; ?>
+                    </ul>
                 </div>
-                <div class="testimonials">
-                    <h2>What Others Are Saying</h2>
-                </div>
+                
             </div>
         </div>
+        <?php endif; wp_reset_query();?>
 
     </article>
 <?php endwhile; ?>

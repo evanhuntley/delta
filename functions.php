@@ -233,4 +233,24 @@ add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_arg
 	return $args;
 }
 
+// Custom Woocommerce Placeholder
+add_action( 'init', 'custom_fix_thumbnail' );
+ 
+function custom_fix_thumbnail() {
+  add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+   
+	function custom_woocommerce_placeholder_img_src( $src ) {
+	$img_dir = get_template_directory_uri();
+	$src = $img_dir . '/assets/img/placeholder.png';
+	 
+	return $src;
+	}
+}
+
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+    function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
+
 ?>

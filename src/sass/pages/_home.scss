@@ -46,6 +46,7 @@
 
         .video {
             @include col(1, 2);
+            text-align: right;
         }
     }
 
@@ -66,14 +67,59 @@
         }
     }
 
-    .our-team {
-
-        .team-bios {
-            @include col(2,3);
+    .testimonials {
+        text-align: center;
+        
+        h2 {
+            @include font-size(2, 2.5);
         }
-
-        .testimonials {
-            @include col(1,3);
+        
+        .flexslider {
+            max-width: 900px;
+            margin: 36px auto;
+        }
+        
+        .slides {
+            @include font-size(1, 1.4);
+        }
+        
+        .flex-direction-nav {
+            
+            a {
+                border-radius: 50%;
+                border: 3px solid #4ec9b5;
+                text-align: center;
+                
+                &:before {
+                    position: relative;
+                    top: 5px;
+                    font-size: 22px;
+                }
+            }
+            
+            .flex-prev {
+                left: 5px;
+                opacity: 0.8;
+                
+                &:before {
+                    content: "\f053";
+                    font-family: FontAwesome,sans-serif;
+                    color: #4ec9b5;
+                    right: 1px;
+                }    
+            }
+            
+            .flex-next {
+                right: 5px;
+                opacity: 0.8;
+                
+                &:before {
+                    content: "\f054";
+                    font-family: FontAwesome,sans-serif;
+                    color: #4ec9b5;
+                    left: 2px;
+                }
+            }
         }
     }
 }

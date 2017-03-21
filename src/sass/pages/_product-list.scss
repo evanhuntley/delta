@@ -52,3 +52,25 @@
         }
     }
 }
+
+.product_list_widget {
+    
+    li {
+        position: relative;
+    }
+    
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+    }
+    
+    .product-title {
+        padding-left: 60px;
+    }
+    
+    .amount {
+        display: block;
+    }
+}

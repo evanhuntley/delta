@@ -144,4 +144,35 @@
         border: none;
         @include font-size(1.4, 1.8);
     }
+    
+    // Thank You Page
+    .woocommerce-thankyou-order-details {
+        @include font-size(1.125, 1.4);
+    }
+    
+    .order_details {
+        width: 100%;
+        text-align: left;
+        
+        tbody {
+            background: #ffffff;
+        }
+        
+        th {
+            padding: 1em;
+            text-transform: uppercase;
+        }
+        
+        td {
+            padding: 1em;
+        }
+        
+        .download-url {
+            @extend .button;
+            
+            a {
+                color: #fff;
+            }
+        }
+    }
 }
